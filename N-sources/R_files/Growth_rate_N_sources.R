@@ -57,7 +57,7 @@ data2_2D2 <- # max cell density
 data2_2D2$treat <- rep(c("N_deplete", "NO3", "NH4", "Urea"), each = 3)
 
 # List used packages in the file
-# used_packages <- list.functions.in.file("C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_files\\Growth_all_rate.R")
+# used_packages <- list.functions.in.file("<set-your-path>/N-AP1a\\R_files\\Growth_all_rate.R")
 
 # put first column as row names and transpose the data frame
 data1 <-
@@ -488,10 +488,11 @@ all_plots <-
   theme(legend.position = "bottom")
 
 # save the combined plot as a png
+dir.create("figures", showWarnings = FALSE)
 ggsave(
   "Growth_rate_all.png",
   all_plots,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/figures",
+  path = "figures",
   dpi = 300,
   width = 3.5,
   height = 4.9,

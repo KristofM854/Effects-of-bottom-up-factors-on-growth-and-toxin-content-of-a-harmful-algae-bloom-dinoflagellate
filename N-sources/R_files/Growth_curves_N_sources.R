@@ -45,7 +45,7 @@ data <-
 data <- as.data.frame(sapply(data[, ], as.numeric))
 
 # list used packages in the R-file
-# used_packages <- list.functions.in.file("C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_files\\Growth_all_counts.R")
+# used_packages <- list.functions.in.file("<set-your-path>/N-AP1a\\R_files\\Growth_all_counts.R")
 
 data1 <- data %>%
   # Pivot the data from wide to long format
@@ -103,7 +103,7 @@ data1 <- data1 %>%
 # data1 %>% group_by(treat,replicate) %>% shapiro_test(data) # Checks for normality
 
 # # Exporting data for Pangaea upload
-# write.table(data1, "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/PANGAEA/cell_counts_L2D2.txt", sep = "\t", row.names = FALSE)
+# write.table(data1, "<set-your-path>/N-AP1a/PANGAEA/cell_counts_L2D2.txt", sep = "\t", row.names = FALSE)
 
 # repeated measures ANOVA is only valid for matching sampling times, hence N-deplete treatment & last Urea sampling day
 # are removed for this analysis 
@@ -300,7 +300,7 @@ data2 <- data2 %>% na.omit() %>%
                         rep(1:3, length.out = 6))) %>% arrange(time)
 
 # # Exporting data for Pangaea
-# write.table(data2, "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/PANGAEA/cell_counts_L4B1.txt", sep = "\t", row.names = FALSE)
+# write.table(data2, "<set-your-path>/N-AP1a/PANGAEA/cell_counts_L4B1.txt", sep = "\t", row.names = FALSE)
 
 ## Two-way repeated measures ANOVA
 ## Check assumptions for two-way repeated measures ANOVA first: Normality and Sphericity
@@ -492,10 +492,11 @@ all_plots <-
         legend.box.margin = margin(-10, 0, 0, 0))
 
 # save the combined plot as a png
+dir.create("figures", showWarnings = FALSE)
 ggsave(
   "Growth_counts_all_color.png",
   all_plots,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/figures",
+  path = "figures",
   dpi = 300,
   width = 3.5,
   height = 6,

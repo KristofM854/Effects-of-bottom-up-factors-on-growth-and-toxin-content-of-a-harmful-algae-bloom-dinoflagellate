@@ -91,7 +91,7 @@ agg_wider <- agg_wider %>% arrange(group)
 
 # export dark parameters
 # agg_wider <- flextable(agg_wider) %>% autofit %>%
-#   save_as_docx(path="C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/Dark_parameters.docx")
+#   save_as_docx(path="<set-your-path>/Light-AP1b/Dark_parameters.docx")
 
 # STATISTICS ############################################
 

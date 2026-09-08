@@ -79,7 +79,7 @@ data <- data %>%
 ## Export pigment data for PANGAEA upload
 # data %>%
 #   select(treat, Day_adjusted, data1, data, replicate) %>%
-#   write.table("C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/PANGAEA/cell_counts_L2D2.txt", sep = "\t", row.names = FALSE)
+#   write.table("<set-your-path>/Light-AP1b/PANGAEA/cell_counts_L2D2.txt", sep = "\t", row.names = FALSE)
 #
 
 # Reshape data for statistical analysis ####
@@ -219,7 +219,7 @@ Conover$ratio <- sub("^[^_]+_[^_]+_(.*?) - .*", "\\1", Conover$comparisons)
 #   pivot_wider(ratio_agg[, c(1:3, 6)], names_from = ratio, values_from = mean_sd)
 # 
 # ratio_agg_pivot <- flextable(ratio_agg_pivot) %>% autofit %>%
-#   save_as_docx(path = "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\ratio_agg_pivot.docx")
+#   save_as_docx(path = "<set-your-path>/Light-AP1b\\ratio_agg_pivot.docx")
 
 # Garbage collection: call after large objects have been removed
 gc()

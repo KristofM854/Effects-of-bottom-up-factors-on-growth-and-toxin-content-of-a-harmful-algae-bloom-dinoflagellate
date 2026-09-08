@@ -1566,7 +1566,7 @@ g4 <- PI_2D2_2 + PI_2D2_per_cell + plot_layout(guides = "collect", ncol = 1, axi
 # ggsave(
 #   "PI_all_2D2.png",
 #   g4,
-#   path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/figures",
+#   path = "<set-your-path>/Light-AP1b/figures",
 #   dpi = 300,
 #   width = 3.5,
 #   height = 4.9,
@@ -3906,7 +3906,7 @@ cohens_d(data = ETR_cell_4B9, Ik ~ group)
 
 # export all PI Pangea data
 # rbind(PI_pan_L2D2, PI_pan_L4B1, PI_pan_L4B9) %>% select(treat, PAR, grouping, ETR, strain) %>%
-#   write.table("C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/PANGAEA/PI_all.txt", sep = "\t", row.names = FALSE)
+#   write.table("<set-your-path>/Light-AP1b/PANGAEA/PI_all.txt", sep = "\t", row.names = FALSE)
 
 # ## combine all and export
 # photo_parameters_all <- rbind(ETR_cell_2D2_mean, ETR_cell_4B1_mean, ETR_cell_4B9_mean)
@@ -3914,7 +3914,7 @@ cohens_d(data = ETR_cell_4B9, Ik ~ group)
 # photo_parameters_all$group <- factor(photo_parameters_all$group, levels = c(20, 100, 200))
 #
 # photo_parameters_all <- photo_parameters_all[,c(1,10:14)] %>% arrange(strain, group) %>% flextable() %>% autofit %>%
-#     save_as_docx(path="C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/photo_parameters_all.docx")
+#     save_as_docx(path="<set-your-path>/Light-AP1b/photo_parameters_all.docx")
 
 ### Plot all together
 PI_model <-
@@ -4060,10 +4060,11 @@ g3 <- PI_2D2_per_cell2 + PI_4B1_per_cell + PI_4B9_per_cell + plot_layout(guides 
   theme(legend.position = "bottom",
         legend.box.margin = margin(-10, -10, -10, -10))
 
+dir.create("figures", showWarnings = FALSE)
 ggsave(
   "PI_all_per_cell.png",
   g3,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/figures",
+  path = "figures",
   dpi = 300,
   width = 15,
   height = 20,
