@@ -29,7 +29,7 @@ loadfonts(device = "win")
 windowsFonts(Times = windowsFont("Times"))
 
 # List used packages in the file
-# used_packages <- list.functions.in.file("C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_files\\Toxin_all.R")
+# used_packages <- list.functions.in.file("<set-your-path>/N-AP1a\\R_files\\Toxin_all.R")
 
 # Import data and general data transformations ################################
 # 1-9: exponential harvest without Urea;
@@ -38,7 +38,7 @@ windowsFonts(Times = windowsFont("Times"))
 # Toxin abundance per Cell 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\GDA_quota_L2D2.txt",
+    "N-sources/R_txt_files/GDA_quota_L2D2.txt",
     sep = "",
     header = T
   )
@@ -46,7 +46,7 @@ data <-
 # POC/PON per Cell
 data1 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\POC_PON_L2D2.txt",
+    "N-sources/R_txt_files/POC_PON_L2D2.txt",
     sep = "",
     header = TRUE
   )
@@ -155,7 +155,7 @@ agg$data_PON <- paste(agg$PON, agg$PON_sd, sep = " +/- ")
 # Toxin abundance per Cell 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\GDA_quota_L4B1.txt",
+    "N-sources/R_txt_files/GDA_quota_L4B1.txt",
     sep = "",
     header = T
   )
@@ -163,7 +163,7 @@ data <-
 # POC/PON per Cell
 data1 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\POC_PON_L4B1.txt",
+    "N-sources/R_txt_files/POC_PON_L4B1.txt",
     sep = "",
     header = TRUE
   )
@@ -265,7 +265,7 @@ agg2$data_PON <- paste(agg2$PON, agg2$PON_sd, sep = " +/- ")
 # agg_total$strain <- rep(c("L2-D2", "L4-B1"), each=length(agg_total$'C.N')/2)
 #
 # agg_total <- flextable(agg_total) %>% autofit %>%
-# save_as_docx(path="C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/POC_PON.docx")
+# save_as_docx(path="<set-your-path>/N-AP1a/POC_PON.docx")
 
 # Between-strains statistics ################################
 # Growth rates
@@ -296,10 +296,11 @@ CN_all <- ex_all %>%
 g <- grid.arrange(P1, P2, ncol = 1)
 
 # save the combined plot as a png
+dir.create("figures", showWarnings = FALSE)
 ggsave(
   "POC_PON_all.png",
   g,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/figures",
+  path = "figures",
   dpi = 300,
   width = 15,
   height = 20,

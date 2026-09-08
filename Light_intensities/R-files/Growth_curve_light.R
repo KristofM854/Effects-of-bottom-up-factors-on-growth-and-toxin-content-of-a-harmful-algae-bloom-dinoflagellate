@@ -36,7 +36,7 @@ pacman::p_load(
 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L2D2.txt",
+    "Light_intensities/raw/data_L2D2.txt",
     sep = "",
     header = FALSE,
     skip = 1,
@@ -204,7 +204,7 @@ P1_c <- ggplot(agg, aes(x = time, y = data, col = treat)) +
 # Load and transform data of L4-B1 ################################################
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B1.txt",
+    "Light_intensities/raw/data_L4B1.txt",
     sep = "",
     skip = 1,
     header = FALSE,
@@ -236,7 +236,7 @@ data <- data %>%
 # data %>%
 #   dplyr::select(treat, time, data1, data, replicate) %>%
 #   write.table(
-#     "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/PANGAEA/cell_counts_L4B1.txt",
+#     "<set-your-path>/Light-AP1b/PANGAEA/cell_counts_L4B1.txt",
 #     sep = "\t",
 #     row.names = FALSE
 #   )
@@ -390,7 +390,7 @@ P2_c <- ggplot(agg, aes(x = time, y = data, col = treat)) +
 # Load and transform data of L4-B9 ################################################
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B9.txt",
+    "Light_intensities/raw/data_L4B9.txt",
     sep = "",
     skip = 1,
     header = FALSE,
@@ -418,11 +418,12 @@ data1 <- data %>%
   mutate(time = c(Day_20[1:36], Day_100_200[37:108])) %>%
   arrange(time)
 
+dir.create("pangaea_export", showWarnings = FALSE)
 # Export for PANGAEA data repository
 data1 %>%
   dplyr::select(treat, time, data1, replicate) %>%
   write.table(
-    "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/PANGAEA/cell_counts_L4B9.txt",
+    "pangaea_export/cell_counts_L4B9.txt",
     sep = "\t",
     row.names = FALSE
   )
@@ -544,10 +545,11 @@ all_plots <-
   theme(legend.position = "bottom",
         legend.box.margin = margin(-10, 0, 0, 0))
 
+dir.create("figures", showWarnings = FALSE)
 ggsave(
   "Growth_counts_all_color.png",
   all_plots,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/figures",
+  path = "figures",
   dpi = 300,
   width = 3.5,
   height = 6,

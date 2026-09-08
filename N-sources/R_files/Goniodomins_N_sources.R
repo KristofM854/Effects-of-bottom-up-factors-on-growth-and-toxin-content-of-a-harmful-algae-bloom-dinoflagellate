@@ -35,7 +35,7 @@ loadfonts(device = "win")
 windowsFonts(Times = windowsFont("Times"))
 
 # List used packages in the file
-# used_packages <- list.functions.in.file("C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_files\\Toxin_all.R")
+# used_packages <- list.functions.in.file("<set-your-path>/N-AP1a\\R_files\\Toxin_all.R")
 
 # Import data and general data transformations ################################
 # 1-9: exponential harvest without Urea;
@@ -44,7 +44,7 @@ windowsFonts(Times = windowsFont("Times"))
 # Toxin abundance per Cell 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\GDA_quota_L2D2.txt",
+    "N-sources/R_txt_files/GDA_quota_L2D2.txt",
     sep = "",
     header = T
   )
@@ -52,7 +52,7 @@ data <-
 # POC/PON per Cell
 data1 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\POC_PON_L2D2.txt",
+    "N-sources/R_txt_files/POC_PON_L2D2.txt",
     sep = "",
     header = TRUE
   )
@@ -68,7 +68,7 @@ data1[, 2:3] <-
 
 # Import cell sizes to normalize toxins to cell volume ################################
 cell_size <- read.csv(
-  "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\cell_size_L2D2_all.txt",
+  "N-sources/R_txt_files/cell_size_L2D2_all.txt",
   sep = "",
   header = TRUE
 )
@@ -352,7 +352,7 @@ Pex3 <- ggplot(Stat_2D2, aes(y = GDA_vol, x = treat, group = group2)) +
 all_plots_2D2 <-
   Pex1 + Pex3 + Pex2 + plot_layout(guides = "collect", ncol = 3) &
   theme(legend.position = "none")
-# ggsave("Norm_comparison.png", all_plots_2D2 ,path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/figures", dpi = 300, width = 30, height = 15, units = "cm")
+# ggsave("Norm_comparison.png", all_plots_2D2 ,path = "<set-your-path>/N-AP1a/figures", dpi = 300, width = 30, height = 15, units = "cm")
 
 # add A. pseudogonyaulax strain L4-B1 ################################
 
@@ -363,7 +363,7 @@ all_plots_2D2 <-
 # Toxin abundance per Cell 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\GDA_quota_L4B1.txt",
+    "N-sources/R_txt_files/GDA_quota_L4B1.txt",
     sep = "",
     header = T
   )
@@ -371,7 +371,7 @@ data <-
 # POC/PON per Cell
 data1 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\POC_PON_L4B1.txt",
+    "N-sources/R_txt_files/POC_PON_L4B1.txt",
     sep = "",
     header = TRUE
   )
@@ -387,7 +387,7 @@ data1[, 2:3] <-
 
 # Import cell sizes to normalize toxins to cell volume ################################
 cell_size = read.csv(
-  "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\cell_size_L4B1_all.txt",
+  "N-sources/R_txt_files/cell_size_L4B1_all.txt",
   sep = "",
   header = T
 )
@@ -593,10 +593,11 @@ all_plots <-
   theme(legend.position = "bottom",
         legend.box.margin = margin(-10, -10, -10, -10))
 
+dir.create("figures", showWarnings = FALSE)
 ggsave(
   "Toxins_all.png",
   all_plots ,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/figures",
+  path = "figures",
   dpi = 300,
   width = 3.5,
   height = 4.9,
@@ -689,7 +690,7 @@ all_plots_comparison <- wrap_plots(plot1_combined, plot2_combined, plot3_combine
 ggsave(
   "all_plots_comparison.png",
   all_plots_comparison ,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/figures",
+  path = "figures",
   dpi = 300,
   width = 30,
   height = 15,
@@ -772,7 +773,7 @@ agg_total <- agg_total %>% arrange(GDA_vol)
 agg_total %>% arrange(GDA_C)
 
 agg_total <- flextable(agg_total) %>% autofit %>%
-  save_as_docx(path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/N-AP1a/GDA_C.docx")
+  save_as_docx(path = "figures/GDA_C.docx")
 
 # Garbage collection: call after large objects have been removed  ################################
 

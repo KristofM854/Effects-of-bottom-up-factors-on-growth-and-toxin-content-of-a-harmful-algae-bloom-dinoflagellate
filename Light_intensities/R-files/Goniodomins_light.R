@@ -39,7 +39,7 @@ windowsFonts(Times = windowsFont("Times"))
 # cell size data of all strains
 cell_size <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\cell_sizes.txt",
+    "Light_intensities/raw/cell_sizes.txt",
     sep = "",
     header = T
   )
@@ -52,7 +52,7 @@ cell_size[] <-
 # read in POC/PON data of all strains for toxin normalization per carbon 
 CN <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\POC_PON_AP1_light.txt",
+    "Light_intensities/raw/POC_PON_AP1_light.txt",
     sep = "",
     header = T
   )
@@ -63,7 +63,7 @@ CN$replicate <- rep(c(1:3))
 # import data A. pseudogonyaulax strain L2-D2 #####
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L2D2.txt",
+    "Light_intensities/raw/data_L2D2.txt",
     sep = "",
     header = FALSE,
     skip = 14,   # Skip the first 13 rows
@@ -294,7 +294,7 @@ Pex3_2D2 <- ggplot(Stat, aes(y = tox_vol, x = factor(group))) +
 # import data A. pseudogonyaulax strain L4-B1 #####
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B1.txt",
+    "Light_intensities/raw/data_L4B1.txt",
     sep = "",
     header = FALSE
   )
@@ -527,7 +527,7 @@ Pex3_4B1 <- ggplot(Stat2, aes(y = tox_vol, x = factor(group))) +
 # import data A. pseudogonyaulax strain L4-B9 #####
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B9.txt",
+    "Light_intensities/raw/data_L4B9.txt",
     sep = "",
     header = FALSE,
     skip = 15,
@@ -756,7 +756,7 @@ all_plots <-
 # ggsave(
 #   "Toxins_all_normiert.png",
 #   all_plots,
-#   path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/figures",
+#   path = "<set-your-path>/Light-AP1b/figures",
 #   dpi = 300,
 #   width = 3.5,
 #   height = 4.9,
@@ -785,10 +785,11 @@ plot2_combined <- Pex3_2D2 + Pex3_4B1 + Pex3_4B9 + plot_layout(guides = "collect
 # Arrange all combined plots in a grid layout
 all_plots_comparison <- wrap_plots(plot1_combined, plot2_combined, ncol = 2)
 
+dir.create("figures", showWarnings = FALSE)
 ggsave(
   "Toxins_comparison.png",
   all_plots_comparison ,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/figures",
+  path = "figures",
   dpi = 300,
   width = 20,
   height = 20,
@@ -841,7 +842,7 @@ cell_size_all <- cell_size2 %>%
   unnest(c(conover_results))
 
 # # Molar ratio POC/PONand GDA:C calculation + export as table
-# CN <-  read.csv("C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\POC_PON_AP1_light.txt", sep="", header=T)
+# CN <-  read.csv("<set-your-path>/Light-AP1b\\raw\\POC_PON_AP1_light.txt", sep="", header=T)
 #
 # CN$ratio <- CN$C_nmol.cell/CN$N_nmol.cell
 # CN$GDA_pg_cell <- c(Stat$data1[c(4:6, 10:12)], Stat2$data1[c(4:6, 10:12)], Stat3$data1[c(4:6, 10:12)])
@@ -858,7 +859,7 @@ cell_size_all <- cell_size2 %>%
 # CN_agg$GDA_per_C_total <- paste(signif(CN_agg$GDA_per_C, 3), signif(CN_agg$GDA_per_C_sd, 3), sep=" +/- ")
 #
 # # Export as table
-# CN_agg <- flextable(CN_agg) %>% autofit() %>%  save_as_docx(path="C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\POC_PON.docx")
+# CN_agg <- flextable(CN_agg) %>% autofit() %>%  save_as_docx(path="<set-your-path>/Light-AP1b\\POC_PON.docx")
 
 # Garbage collection: call after large objects have been removed
 

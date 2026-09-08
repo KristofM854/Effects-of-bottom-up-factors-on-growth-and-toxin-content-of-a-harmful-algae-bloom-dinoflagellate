@@ -34,7 +34,7 @@ pacman::p_load(
 # Load and transform data ########
 data_2D2 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L2D2.txt",
+    "Light_intensities/raw/data_L2D2.txt",
     sep = "",
     header = FALSE,
     nrows = 22
@@ -204,7 +204,7 @@ P1 <- ggplot(ex, aes(y = value, x = group)) +
 # Load and transform data ########
 data_4B1 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B1.txt",
+    "Light_intensities/raw/data_L4B1.txt",
     sep = "",
     header = FALSE
   )
@@ -382,7 +382,7 @@ P2 <- ggplot(ex2, aes(y = value, x = group)) +
 # Load and transform data ########
 data_4B9 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B9.txt",
+    "Light_intensities/raw/data_L4B9.txt",
     sep = "",
     header = FALSE
   )
@@ -558,10 +558,11 @@ all_plots <-
   P1 + P2 + P3 + plot_layout(guides = "collect", ncol = 1, axis_titles = "collect_y") &
   theme(legend.position = "bottom")
 
+dir.create("figures", showWarnings = FALSE)
 ggsave(
   "Growth_all.png",
   all_plots ,
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/figures",
+  path = "figures",
   dpi = 300,
   width = 3.5,
   height = 4.9,
@@ -731,7 +732,7 @@ ggplot(agg_total2, aes(x = light, y = value)) +
 
 ggsave(
   "Growth_cor.png",
-  path = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/Light-AP1b/figures",
+  path = "figures",
   dpi = 300,
   width = 3.5,
   height = 2.8,
@@ -742,7 +743,7 @@ ggsave(
 pacman::p_load(grateful)
 cite_packages(
   out.format = "docx",
-  out.dir = "C:/Users/krist/OneDrive/Dokumente/AWI/Promotion/AP1/",
+  out.dir = "figures",
   pkgs = "Session",
   out.file = "GR_packages"
 )
