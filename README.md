@@ -36,6 +36,8 @@ The files in this repository exist only to reproduce these scripts.
 Strains: L2-D2, L4-B1 and L4-B9. The light experiment uses all three, the
 nitrogen experiment uses L2-D2 and L4-B1.
 
+All data required to reproduce the analysis is included in this repository.
+
 ## Contents
 
 ### `Light_intensities/`
@@ -81,9 +83,12 @@ Packages are loaded on demand via `pacman::p_load`.
 
 The scripts were archived as they were used and have not been refactored.
 
-- Four referenced files are not included: `PI_all.txt`, `cell_counts_L2D2.txt`,
-  `cell_counts_L4B1.txt`, `cell_counts_L4B9.txt`. Retrieve the equivalent data
-  from the PANGAEA archive.
+- `Goniodomins_light.R` reads `cell_sizes.txt` while the committed file is
+  `Cell_sizes.txt`. The capitalisation must match on Linux and macOS.
+- Several scripts contain `write.table()` calls that export reshaped data to a
+  PANGAEA staging folder. These are archiving steps, not part of the analysis.
+  Most are commented out; the live one in `Growth_curve_light.R` writes to
+  `out_dir` and can be ignored.
 - `ETR_max.txt` is included but not read by any script. It holds maximum
   electron transport rates derived from the PI curves.
 - Photosynthesis-irradiance curve fitting is done per strain in long, repeated
@@ -91,7 +96,7 @@ The scripts were archived as they were used and have not been refactored.
   lines for this reason.
 - Package loading is scattered through the scripts rather than collected at the
   top, so a partial run may hit a missing package mid-script.
-
+  
 ## Status
 
 Archived on publication. Kept for transparency and reproducibility. Issues are
