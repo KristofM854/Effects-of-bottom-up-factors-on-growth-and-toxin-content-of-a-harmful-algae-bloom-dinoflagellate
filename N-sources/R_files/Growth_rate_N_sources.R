@@ -39,7 +39,7 @@ pacman::p_load(
 # Load and transform data ########
 data1 <- # cell counts data
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\L2D2_growth.txt",
+    "N-sources/R_txt_files/L2D2_growth.txt",
     sep = "",
     header = FALSE
   )
@@ -47,7 +47,7 @@ data1 <- # cell counts data
 data2_2D2 <- # max cell density
   as.data.frame(
     read.csv(
-      "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\L2D2_max_density.txt",
+      "N-sources/R_txt_files/L2D2_max_density.txt",
       sep = "",
       header = FALSE
     )
@@ -262,7 +262,7 @@ P1 <- ggplot(ex, aes(x = treat, y = data)) +
 # Load and transform data ########
 data1 <- # cell counts data
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\\\R_txt_files\\L4B1_growth.txt",
+    "N-sources/R_txt_files/L4B1_growth.txt",
     sep = "",
     header = FALSE
   )
@@ -270,7 +270,7 @@ data1 <- # cell counts data
 data2_4B1 <- # max cell density
   as.data.frame(
     read.csv(
-      "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\\\R_txt_files\\L4B1_max_density.txt",
+      "N-sources/R_txt_files/L4B1_max_density.txt",
       sep = "",
       header = FALSE
     )

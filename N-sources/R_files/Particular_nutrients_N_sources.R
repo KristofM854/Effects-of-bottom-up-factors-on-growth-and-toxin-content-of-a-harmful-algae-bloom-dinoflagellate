@@ -38,7 +38,7 @@ windowsFonts(Times = windowsFont("Times"))
 # Toxin abundance per Cell 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\GDA_quota_L2D2.txt",
+    "N-sources/R_txt_files/GDA_quota_L2D2.txt",
     sep = "",
     header = T
   )
@@ -46,7 +46,7 @@ data <-
 # POC/PON per Cell
 data1 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\POC_PON_L2D2.txt",
+    "N-sources/R_txt_files/POC_PON_L2D2.txt",
     sep = "",
     header = TRUE
   )
@@ -155,7 +155,7 @@ agg$data_PON <- paste(agg$PON, agg$PON_sd, sep = " +/- ")
 # Toxin abundance per Cell 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\GDA_quota_L4B1.txt",
+    "N-sources/R_txt_files/GDA_quota_L4B1.txt",
     sep = "",
     header = T
   )
@@ -163,7 +163,7 @@ data <-
 # POC/PON per Cell
 data1 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\POC_PON_L4B1.txt",
+    "N-sources/R_txt_files/POC_PON_L4B1.txt",
     sep = "",
     header = TRUE
   )

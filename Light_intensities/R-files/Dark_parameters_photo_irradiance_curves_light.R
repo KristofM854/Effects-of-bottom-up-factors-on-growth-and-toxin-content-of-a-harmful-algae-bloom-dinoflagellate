@@ -32,7 +32,7 @@ windowsFonts(Times = windowsFont("Times"))
 # Load and transform data ########
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\Dark_parameters.txt",
+    "Light_intensities/raw/Dark_parameters.txt",
     header = TRUE,
     sep = ""
   )

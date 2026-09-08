@@ -32,7 +32,7 @@ windowsFonts(Times = windowsFont("Times"))
 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\L2D2_growth.txt",
+    "N-sources/R_txt_files/L2D2_growth.txt",
     sep = "",
     header = FALSE
   )
@@ -257,7 +257,7 @@ P1_c <- ggplot(agg2, aes(x = time, y = data_log, col = treat)) +  # Set up the g
 # Load and transform data ########
 data2 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\\\R_txt_files\\L4B1_growth.txt",
+    "N-sources/R_txt_files/L4B1_growth.txt",
     sep = "",
     header = FALSE
   )

@@ -49,7 +49,7 @@ windowsFonts(Times = windowsFont("Times"))
 # Load data
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\PI_2D2.txt",
+    "Light_intensities/raw/PI_2D2.txt",
     sep = "",
     header = TRUE
   )
@@ -1246,7 +1246,7 @@ PI_model$group <- factor(PI_model$group, levels = c(20, 100, 200))
 # Include Silke Thoms photophysiology model
 PI_2D2_model_Silke <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\PI_2D2_model.txt",
+    "Light_intensities/raw/PI_2D2_model.txt",
     sep = "",
     header = TRUE
   )
@@ -1577,7 +1577,7 @@ g4 <- PI_2D2_2 + PI_2D2_per_cell + plot_layout(guides = "collect", ncol = 1, axi
 # Load data 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\PI_4B1.txt",
+    "Light_intensities/raw/PI_4B1.txt",
     sep = "",
     header = TRUE
   )
@@ -2868,7 +2868,7 @@ PI_4B1_per_cell <- ggplot(data = agg, aes(x = PAR, y = ETR_per_cell)) +
 # Load data 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\PI_4B9.txt",
+    "Light_intensities/raw/PI_4B9.txt",
     sep = "",
     header = TRUE
   )

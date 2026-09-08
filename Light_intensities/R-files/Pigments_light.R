@@ -26,7 +26,7 @@ pacman::p_load(
 # Extract first two lines for the header (Pigment name and unit)
 headers <-
   read.table(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\Pigments.txt",
+    "Light_intensities/raw/Pigments.txt",
     nrows = 2,
     header = FALSE
   )
@@ -36,7 +36,7 @@ headers_names <- sapply(headers, paste, collapse = "_")
 
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\Pigments.txt",
+    "Light_intensities/raw/Pigments.txt",
     skip = 2,
     header = FALSE,
     sep = ""
@@ -133,7 +133,7 @@ LH_LP %>%
 # Calculate mean ratios of pigments +- SD and export as table
 ratios <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\Pigments_ratio.txt",
+    "Light_intensities/raw/Pigments_ratio.txt",
     header = T,
     sep = ""
   )

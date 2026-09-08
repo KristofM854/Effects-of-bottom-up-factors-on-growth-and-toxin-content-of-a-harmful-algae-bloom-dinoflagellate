@@ -33,7 +33,7 @@ pacman::p_load(pacman,
 # LOAD DATA strain L2-D2 ################################################
 
 Stat_2D2 = read.csv(
-  "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\cell_size_L2D2_all.txt",
+  "N-sources/R_txt_files/cell_size_L2D2_all.txt",
   sep = "",
   header = T
 )
@@ -69,7 +69,7 @@ Con_2D2 <-
 # LOAD DATA strain L4-B1 ################################################
 
 Stat_4B1 = read.csv(
-  "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\N-AP1a\\R_txt_files\\cell_size_L4B1_all.txt",
+  "N-sources/R_txt_files/cell_size_L4B1_all.txt",
   sep = "",
   header = T
 )

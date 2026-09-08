@@ -39,7 +39,7 @@ windowsFonts(Times = windowsFont("Times"))
 # cell size data of all strains
 cell_size <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\cell_sizes.txt",
+    "Light_intensities/raw/cell_sizes.txt",
     sep = "",
     header = T
   )
@@ -52,7 +52,7 @@ cell_size[] <-
 # read in POC/PON data of all strains for toxin normalization per carbon 
 CN <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\POC_PON_AP1_light.txt",
+    "Light_intensities/raw/POC_PON_AP1_light.txt",
     sep = "",
     header = T
   )
@@ -63,7 +63,7 @@ CN$replicate <- rep(c(1:3))
 # import data A. pseudogonyaulax strain L2-D2 #####
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L2D2.txt",
+    "Light_intensities/raw/data_L2D2.txt",
     sep = "",
     header = FALSE,
     skip = 14,   # Skip the first 13 rows
@@ -294,7 +294,7 @@ Pex3_2D2 <- ggplot(Stat, aes(y = tox_vol, x = factor(group))) +
 # import data A. pseudogonyaulax strain L4-B1 #####
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B1.txt",
+    "Light_intensities/raw/data_L4B1.txt",
     sep = "",
     header = FALSE
   )
@@ -527,7 +527,7 @@ Pex3_4B1 <- ggplot(Stat2, aes(y = tox_vol, x = factor(group))) +
 # import data A. pseudogonyaulax strain L4-B9 #####
 data <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B9.txt",
+    "Light_intensities/raw/data_L4B9.txt",
     sep = "",
     header = FALSE,
     skip = 15,

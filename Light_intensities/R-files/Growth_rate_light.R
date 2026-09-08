@@ -34,7 +34,7 @@ pacman::p_load(
 # Load and transform data ########
 data_2D2 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L2D2.txt",
+    "Light_intensities/raw/data_L2D2.txt",
     sep = "",
     header = FALSE,
     nrows = 22
@@ -204,7 +204,7 @@ P1 <- ggplot(ex, aes(y = value, x = group)) +
 # Load and transform data ########
 data_4B1 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B1.txt",
+    "Light_intensities/raw/data_L4B1.txt",
     sep = "",
     header = FALSE
   )
@@ -382,7 +382,7 @@ P2 <- ggplot(ex2, aes(y = value, x = group)) +
 # Load and transform data ########
 data_4B9 <-
   read.csv(
-    "C:\\Users\\krist\\OneDrive\\Dokumente\\AWI\\Promotion\\AP1\\Light-AP1b\\raw\\data_L4B9.txt",
+    "Light_intensities/raw/data_L4B9.txt",
     sep = "",
     header = FALSE
   )
