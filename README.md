@@ -70,8 +70,9 @@ DOI.
 
 ## Running it
 
-Open the repository as an RStudio project so that paths resolve from the
-repository root, then run any script top to bottom.
+Open the `bottom-up-factors.Rproj` file in RStudio. This sets the working
+directory to the repository root, which is what the scripts' relative paths
+assume. Then run any script top to bottom.
 
 ```r
 source("Light_intensities/R-files/Growth_rate_light.R")
@@ -83,12 +84,10 @@ Packages are loaded on demand via `pacman::p_load`.
 
 The scripts were archived as they were used and have not been refactored.
 
-- `Goniodomins_light.R` reads `cell_sizes.txt` while the committed file is
-  `Cell_sizes.txt`. The capitalisation must match on Linux and macOS.
 - Several scripts contain `write.table()` calls that export reshaped data to a
   PANGAEA staging folder. These are archiving steps, not part of the analysis.
   Most are commented out; the live one in `Growth_curve_light.R` writes to
-  `out_dir` and can be ignored.
+  `pangaea_export/` and can be ignored.
 - `ETR_max.txt` is included but not read by any script. It holds maximum
   electron transport rates derived from the PI curves.
 - Photosynthesis-irradiance curve fitting is done per strain in long, repeated
