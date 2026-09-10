@@ -23,6 +23,7 @@ pacman::p_load(
   purrr,
   grid,
   flextable,
+  ggtext,
   ggpubr,
   ggprism,
   scales,
